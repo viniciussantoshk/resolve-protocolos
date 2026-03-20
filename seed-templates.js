@@ -296,6 +296,481 @@ const templates = [
       <p style="margin-bottom:0;">Após o recebimento e validação, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
     `)
   },
+  {
+        name: 'Sinistro - Bolsa Protegida', icon: '👜', subject: 'Abertura de Sinistro: Bolsa Protegida',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Nota fiscal dos objetos furtados</li>
+            <li>Boletim de ocorrência (contendo itens furtados)</li>
+            <li>Se celular foi furtado, orientar segurado a fazer o bloqueio do IMEI do aparelho junto à operadora</li>
+            <li>Comprovante de bloqueio do cartão (conta utilizada para pagar o Sem Parar)</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Compra com Cartão', icon: '💳', subject: 'Abertura de Sinistro: Compra com Cartão',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Extrato bancário dos últimos 3 meses anteriores à data da ocorrência</li>
+            <li>Boletim de ocorrência (contendo itens furtados)</li>
+            <li>Comprovante de bloqueio do cartão (conta utilizada para pagar o Sem Parar)</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista IFTT (Genesys)', icon: '🩺', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida IFTT',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Comprovante da atividade remunerada exercida (Extrato do MEI, declaração de Imposto de Renda ou Guia de Comprovação de Pagamento do INSS)</li>
+            <li>Laudo/Atestado de afastamento</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista IFTT (Stamina)', icon: '🩺', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida IFTT',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (STAMINA)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo <strong>no link que recebeu no seu e-mail.</strong></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Comprovante da atividade remunerada exercida (Extrato do MEI, declaração de Imposto de Renda ou Guia de Comprovação de Pagamento do INSS)</li>
+            <li>Laudo/Atestado de afastamento</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista IPA (Genesys)', icon: '🏥', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida IPA',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Boletim de ocorrência (se houver)</li>
+            <li>Laudo de invalidez c/ alta médica</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista IPA (Stamina)', icon: '🏥', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida IPA',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (STAMINA)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo <strong>no link que recebeu no seu e-mail.</strong></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Boletim de ocorrência (se houver)</li>
+            <li>Laudo de invalidez c/ alta médica</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - IPA Vítima de Crime', icon: '⚖️', subject: 'Abertura de Sinistro: IPA - Vítima de Crime',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Boletim de ocorrência</li>
+            <li>Laudo de invalidez c/ alta médica</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Morte Acidental Vítima de Crime', icon: '🕊️', subject: 'Abertura de Sinistro: Morte Acidental',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Certidão de Óbito</li>
+            <li>Documento pessoal com foto do titular do seguro</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Boletim de ocorrência</li>
+            <li>Laudo do IML</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - PIX sob Coação', icon: '📱', subject: 'Abertura de Sinistro: PIX sob Coação',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Comprovante da transação (original e assinado pelo banco)</li>
+            <li>Extrato bancário dos últimos 3 meses anteriores à data da ocorrência</li>
+            <li>Boletim de ocorrência</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista Desemprego (Genesys)', icon: '💼', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida - Desemprego',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Termo de rescisão de contrato de trabalho</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Chave FGTS rescisão</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista Desemprego (Stamina)', icon: '💼', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida - Desemprego',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (ZENDESK)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Termo de rescisão de contrato de trabalho</li>
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Chave FGTS rescisão</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista Morte (Genesys)', icon: '🕊️', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida - Morte',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Certidão de Óbito</li>
+            <li>Documento pessoal com foto do titular do seguro</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Prestamista Morte (Stamina)', icon: '🕊️', subject: 'Abertura de Sinistro: Prestamista/Renda Garantida - Morte',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (STAMINA)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo <strong>no link que recebeu no seu e-mail.</strong></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Certidão de Óbito</li>
+            <li>Documento pessoal com foto do titular do seguro</li>
+            <li>Comprovante de endereço atualizado</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Danos Elétricos', icon: '⚡', subject: 'Abertura de Sinistro Residencial: Danos Elétricos',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Protocolo junto a concessionária de energia (em caso de problemas decorrentes do fornecimento de energia da concessionaria)</li>
+            <li>Orçamento discriminado para equipamentos com impossibilidade de reparos (idêntico ao danificado, marca e modelo ou similar em caso de descontinuidade)</li>
+            <li>Laudo técnico discriminado, da Assistência Técnica, contendo peças e mão de obra para os reparos do equipamento danificado, ou parecer de impossibilidade de reparos</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Fotos frontal dos bens atingidos/danificados e da etiqueta de identificação (marca, modelo e nº série)</li>
+            <li>Declaração de salvados (anexo) caso haja equipamentos sem condições de reparo</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Equip. Eletrônicos', icon: '💻', subject: 'Abertura de Sinistro Residencial: Equipamentos Eletrônicos',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Protocolo junto a concessionária de energia (em caso de problemas decorrentes do fornecimento de energia da concessionaria)</li>
+            <li>Orçamento discriminado para equipamentos com impossibilidade de reparos (idêntico ao danificado, marca e modelo ou similar em caso de descontinuidade)</li>
+            <li>Laudo técnico discriminado, da Assistência Técnica, contendo peças e mão de obra para os reparos do equipamento danificado, ou parecer de impossibilidade de reparos</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Fotos frontal dos bens atingidos/danificados e da etiqueta de identificação (marca, modelo e nº série)</li>
+            <li>Declaração de salvados (anexo) caso haja equipamentos sem condições de reparo</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Incêndio/Explosão', icon: '🔥', subject: 'Abertura de Sinistro Residencial: Incêndio, Raio ou Explosão',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Cópia de NF do orçamento de reparo dos danos</li>
+            <li>Cópia de dados bancários em titularidade do segurado</li>
+            <li>Boletim de ocorrência (OBRIGATÓRIO, em caso de incêndio)</li>
+            <li>Declaração de inexistência de outros seguros e autorização de crédito em conta</li>
+            <li>Comprovação de propriedade e/ou de posse do imóvel segurado (interesse segurado, conforme o caso) onde ocorreu o sinistro e, se for o caso, o respectivo contrato de aluguel</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong>.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Quebra de Vidros/Mármore', icon: '🪟', subject: 'Abertura de Sinistro Residencial: Quebra de Vidros, Mármore e Granitos',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Foto do vidro danificado (se possuir)</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Orçamento discriminado de materiais (com metragem e quantidades) e mão de obra</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Roubo e Furto', icon: '🥷', subject: 'Abertura de Sinistro Residencial: Roubo e Furto',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Fotos dos danos causados, telhas, forro, móveis atingidos/danificados</li>
+            <li>Orçamento discriminado de materiais (com metragem e quantidades) e mão de obra</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Ruptura de Tubulação', icon: '🚰', subject: 'Abertura de Sinistro Residencial: Ruptura de Tubulação',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Foto do dano (se possuir)</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Orçamento discriminado de materiais (com metragem e quantidades) e mão de obra</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Residencial Vendaval e Ciclone', icon: '🌪️', subject: 'Abertura de Sinistro Residencial: Vendaval, Ciclone, Tornado e Granizo',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (FÊNIX)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhe a listagem de documentos através do link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>RG/CPF do Segurado</li>
+            <li>Comprovante de endereço (conta consumo), no nome do segurado</li>
+            <li>Declaração de existência/inexistência de outros seguros (pode ser feito à mão, assinado e datado no final)</li>
+            <li>Documento demonstrando os Dados Bancários no CPF do segurado: Nome do Banco / Agência e Conta com dígito</li>
+            <li>Reclamação formal de prejuízos detalhada (pode ser feito à mão, assinado e datado no final), contendo narrativa breve do evento</li>
+            <li>Fotos dos danos causados, telhas, forro, móveis atingidos/danificados</li>
+            <li>Orçamento discriminado de materiais (com metragem e quantidades) e mão de obra</li>
+          </ul>
+          <p>O regulador fará contato por e-mail em <strong>5 dias úteis</strong> solicitando a documentação.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Roubo Após Saque', icon: '🏧', subject: 'Abertura de Sinistro: Roubo Após Saque',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Comprovante do saque (original e assinado pelo banco) ou foto original do extrato do saque (canhoto do caixa eletrônico)</li>
+            <li>Extrato bancário dos últimos 3 meses anteriores à data da ocorrência</li>
+            <li>Boletim de ocorrência (contendo itens furtados)</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro - Saque Sob Coação', icon: '😰', subject: 'Abertura de Sinistro: Saque Sob Coação',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          <p style="margin-bottom: 4px;"><strong>Listagem de documentos:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Documento pessoal com foto</li>
+            <li>Comprovante de endereço atualizado</li>
+            <li>Comprovante do saque (original e assinado pelo banco) ou foto original do extrato do saque (canhoto do caixa eletrônico)</li>
+            <li>Extrato bancário dos últimos 3 meses anteriores à data da ocorrência</li>
+            <li>Boletim de ocorrência (contendo itens furtados)</li>
+            <li>Dados bancários do titular do seguro</li>
+          </ul>
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro Vida - IFPD', icon: '🏥', subject: 'Abertura de Sinistro Vida: Invalidez Funcional Permanente e Total por Doença (IFPD)',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          
+          <p style="margin-bottom: 4px;"><strong>Documentos do Segurado:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Cópia do RG, CPF e comprovante de residência em nome do titular</li>
+            <li>Relatório médico informando data do(s) diagnóstico(s) das doenças, tratamento realizado, prescrições futuras, se foram esgotadas todas as possibilidades terapêuticas para o caso e a data da caracterização da invalidez como total e definitiva</li>
+            <li>Relatórios e exames originais médicos que comprovem a invalidez</li>
+          </ul>
+
+          <p style="margin-bottom: 4px;"><strong>Documentos do Estipulante/Empresa:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Cópia da Ficha de Registro de Empregado, no caso de funcionário empregado</li>
+            <li>Cópia dos 3 últimos holerites imediatamente anteriores à data da ocorrência do sinistro, no caso de funcionário empregado</li>
+            <li>Cópia do CAGED (Cadastro Geral de Empregados e Desempregados) do mês de ocorrência do sinistro, quando o capital segurado for modalidade capital global</li>
+          </ul>
+          
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
+    {
+        name: 'Sinistro Vida - Invalidez por Acidente (Titular/Cônjuge)', icon: '🚑', subject: 'Abertura de Sinistro Vida: Invalidez Permanente Total/Parcial por Acidente',
+        body: ezzeEmail(`
+          <p style="margin-top:0; color:#0f172a;">Olá, <strong>{{nome_cliente}}</strong>.</p>
+          <p>Seu atendimento foi realizado em: <strong>{{data_atendimento}}</strong></p>
+          ${protocolCard('#2596be', '#f0f9ff', 'PROTOCOLO DO SINISTRO (GENESYS)', '{{protocolo}}')}
+          <p style="margin-bottom: 8px;">Por favor, encaminhar a listagem de documentos abaixo no link: <a href="https://ezze-seguros.zendesk.com/hc/pt-br" target="_blank">Portal de Atendimento Ezze</a></p>
+          
+          <p style="margin-bottom: 4px;"><strong>Documentos do Segurado Titular:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Cópia do RG e CPF</li>
+            <li>Cópia do comprovante de residência em nome do segurado titular</li>
+            <li>Relatórios, exames médicos originais e radiografias originais que comprovem a invalidez</li>
+            <li>Relatório médico informando a data do acidente, o percentual do déficit funcional apresentado por segmento, data de confirmação da alta médica e da reabilitação</li>
+            <li>Cópia do Boletim de Ocorrência (ou descrição detalhada do acidente assinada caso não haja BO)</li>
+            <li>Cópia da CNH, se acidente automobilístico e o sinistrado for o condutor</li>
+            <li>Cópia do resultado do Exame Toxicológico/Dosagem Alcoólica, se realizado</li>
+            <li>Cópia do Laudo de Perícia Técnica realizada no local do acidente</li>
+            <li>Formulário EZZE de Autorização para Pagamento de Indenização</li>
+          </ul>
+
+          <p style="margin-bottom: 4px;"><strong>Documentos do Estipulante/Empresa:</strong></p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Cópia da Ficha de Registro de Empregado, no caso de funcionário empregado</li>
+            <li>Cópia dos 3 últimos holerites imediatamente anteriores à data da ocorrência do sinistro</li>
+            <li>Cópia do CAGED do mês de ocorrência do sinistro, quando o capital segurado for modalidade capital global</li>
+          </ul>
+
+          <p style="margin-bottom: 4px;"><strong>Documentos do Sinistrado (Cônjuge):</strong></p>
+          <p style="margin-bottom: 4px; font-size: 13px;">Se o sinistrado for o cônjuge, além dos documentos acima, encaminhar também:</p>
+          <ul style="margin-top: 0; padding-left: 20px;">
+            <li>Cópia de prova de União Estável (Ex: declaração feita em cartório, comprovante de residência em comum, dependência no IR, conta bancária conjunta, etc.)</li>
+          </ul>
+
+          <p>Após o recebimento, a área responsável terá até <strong>15 dias corridos</strong> para análise.</p>
+        `)
+    },
 
   // ─── BLOCO 3: RESPONSABILIDADE CIVIL E TRIUNFO (Novos) ───
   {
@@ -344,7 +819,7 @@ async function seedTemplates() {
         .query('INSERT INTO Templates (name, icon, subject, description, body) VALUES (@name, @icon, @subject, @description, @body)');
     }
     
-    console.log('✅ Todos os 22 modelos foram importados com sucesso para o banco!');
+    console.log('✅ Todos os modelos foram importados com sucesso para o banco!');
     process.exit(0);
   } catch (error) {
     console.error('❌ Erro na importação:', error);

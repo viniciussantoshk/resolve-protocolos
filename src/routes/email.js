@@ -68,6 +68,33 @@ router.post('/send', requireAuth, async (req, res) => {
     // Dispara
     await transporter.sendMail(mailOptions);
 
+    // --- NOVA MELHORIA: AVISO PRÉVIO PARA A QUALIDADE ---
+    if (template.name.includes('Reembolso')) {
+      const qualidadeHtml = `
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #f8fafc;">
+          <h2 style="color: #0f766e; margin-top: 0;">⚠️ Pré-aviso de Reembolso</h2>
+          <p style="color: #334155; font-size: 15px;">Olá, time de Qualidade.</p>
+          <p style="color: #334155; font-size: 15px;">O operador <strong>${req.user.name}</strong> acabou de realizar um atendimento e enviou as orientações de reembolso para o cliente <strong>${data.nome_cliente || 'Não informado'}</strong>.</p>
+          <div style="background-color: #ffffff; border-left: 4px solid #0f766e; padding: 12px 16px; margin: 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: bold;">Protocolo de Atendimento</p>
+            <p style="margin: 4px 0 0 0; font-size: 20px; font-weight: 800; color: #0f766e;">${data.protocolo || 'N/A'}</p>
+          </div>
+          <p style="color: #64748b; font-size: 13px; font-style: italic;">Este é um aviso automático para que a equipe fique ciente e possa se preparar para o recebimento da documentação deste segurado em breve.</p>
+        </div>
+      `;
+      
+      const qualidadeOptions = { 
+        from: fromHeader, 
+        to: 'qualidade@resolveassist.com.br', 
+        subject: `Aviso de Futuro Reembolso - Protocolo: ${data.protocolo || 'N/A'}`, 
+        html: qualidadeHtml 
+      };
+      
+      // Dispara o alerta interno para a qualidade (SEM PIXEL)
+      await transporter.sendMail(qualidadeOptions);
+    }
+    // --- FIM DA MELHORIA ---
+
     // Salva Log de Sucesso (AGORA COM O TRACK_ID)
     await pool.request()
       .input('user_login', sql.VarChar, req.user.login)
