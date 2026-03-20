@@ -21,7 +21,7 @@ router.post('/login', async (req, res) => {
     // Busca o usuário no SQL Server
     const result = await pool.request()
       .input('login', sql.VarChar, login)
-      .query('SELECT * FROM Users WHERE login = @login AND active = 1');
+      .query('SELECT * FROM Users WHERE login = @login AND is_active = 1');
 
     const user = result.recordset[0];
 

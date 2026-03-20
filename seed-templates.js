@@ -10,7 +10,7 @@ function ezzeEmail(bodyContent) {
     <p style="font-size: 11.5px; color: #94a3b8; margin: 0 0 20px 0; line-height: 1.5;">
       ***Esta é uma mensagem automática, então pedimos a gentileza de não respondê-la, pois não conseguiremos ler sua resposta por aqui.***
     </p>
-    <img src="https://raw.githubusercontent.com/viniciussantoshk/resolve-protocolos/main/public/assets/logo-ezze.jpeg" alt="Ezze Seguros" style="height: 38px; width: auto; border-radius: 4px;" />
+    <img src="https://protocolos.resolveassist.com.br/assets/logo-ezze.jpeg" alt="Ezze Seguros" width="120" style="display: block; margin: 0 auto; outline: none; text-decoration: none; border: none;">
   </div>
 </div>`;
 }

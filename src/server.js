@@ -17,17 +17,23 @@ const app = express();
 
 // ── Segurança e Middlewares ──
 app.use(helmet({
+  xFrameOptions: false, 
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      // Permite scripts locais, scripts inline da nossa tela e o CDN do Chart.js
       scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
-      // Permite estilos locais, inline e as fontes do Google (Syne e DM Sans)
+      
+      // MÁGICA 1: Permite que os botões com 'onclick' voltem a funcionar
+      scriptSrcAttr: ["'unsafe-inline'"], 
+      
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
-      // Permite imagens locais, em base64 (anexos/preview) e links externos (para o Pixel)
       imgSrc: ["'self'", "data:", "blob:", "http:", "https:"], 
-      connectSrc: ["'self'"],
+      
+      // MÁGICA 2: Libera a conexão para o Chart.js baixar seus mapas e carregar o dashboard
+      connectSrc: ["'self'", "https://cdn.jsdelivr.net"],
+      
+      frameAncestors: ["'self'", "*.sae1.pure.cloud"],
     },
   },
 }));

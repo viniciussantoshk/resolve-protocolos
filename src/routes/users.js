@@ -14,7 +14,7 @@ router.get('/', requireAuth, requireRole('admin', 'administrador', 'supervisor')
     const result = await pool.request().query(`
       SELECT id, login, name, role, is_active, created_at, last_access 
       FROM Users 
-      WHERE active = 1
+      WHERE is_active = 1
       ORDER BY name ASC
     `);
     
